@@ -193,7 +193,7 @@ func setupRoutes() {
 func main() {
 	log.SetPrefix("[wsserver] ")
 	var (
-		server   = flag.String("serve", "ws://localhost", "Server string to serve")
+		server   = flag.String("serve", "ws://:8080", "Server string to serve")
 		cert     = flag.String("cert", "", "Server certificate if server is wss://")
 		pkey     = flag.String("pkey", "", "Server private key if server is wss://")
 		fileRoot = flag.String("fileroot", "/tmp", "Default root path for file sending")

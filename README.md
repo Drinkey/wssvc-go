@@ -7,8 +7,13 @@ Command line arguments when launching server
 - `--file-root` specify the root of files for reading, default is `.` (current directory)
 
 ```
-$ wssvc --serve ws://localhost:8888 --file-root /tmp
+$ wssvc --serve ws://:8888 --file-root /tmp
 ```
+
+Server String
+- `ws://:8080` is same as `ws://0.0.0.0:8080`, which listens on `*.*:8080` or say `0.0.0.0:8080`, which allows connection to TCP 8080 port from anywhere.
+- `ws://localhost:8080` is same as `ws://127.0.0.1:8080`, which listens on `127.0.0.1:8080`, which allows connection to TCP 8080 port from local host. Connections from locations other than localhost is not permitted.
+- `wss://` has the same behavior with `ws://`
 
 Client side can control server side behavior using the following commands by sending text messages
 - `ping me` asking server to send a Ping message to client
